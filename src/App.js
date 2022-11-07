@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import PathVisualizer from "./Components/PathVisualizer";
+import { useState } from "react";
 
 function App() {
+  const [grid, setgrid] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header grid={grid} />
+      <PathVisualizer grid={grid} setgrid={setgrid} />
     </div>
   );
 }
